@@ -14,9 +14,9 @@ describe('get', () => {
 
         before((done) => {
             let tasks = [
-                { title: 'Estudar NodejS', email: 'eu@papito.io', done: false },
-                { title: 'Fazer compras', email: 'eu@papito.io', done: false },
-                { title: 'Estudar MongoDB', email: 'eu@papito.io', done: true }
+                { title: 'Estudar NodejS', owner: 'eu@papito.io', done: false },
+                { title: 'Fazer compras', owner: 'eu@papito.io', done: false },
+                { title: 'Estudar MongoDB', owner: 'eu@papito.io', done: true }
             ]
 
             tasksModel.insertMany(tasks);
@@ -50,7 +50,7 @@ describe('get', () => {
 
         it('deve retornar uma única tarefa', (done) => {
             let tasks = [
-                { title: 'Ler um livro de Javascript', email: 'eu@papito.io', done: false },
+                { title: 'Ler um livro de Javascript', owner: 'eu@papito.io', done: false },
             ]
 
             tasksModel.insertMany(tasks, (err, result) => {
