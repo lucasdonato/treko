@@ -21,7 +21,7 @@ describe('put', () => {
 
         before((done) => {
             tasksModel.insertMany([task])
-            done()
+            done();
         })
 
         it('entao deve retornar 200', (done) => {
@@ -33,7 +33,7 @@ describe('put', () => {
                 .end((err, res) => {
                     expect(res).to.have.status(200)
                     expect(res.body).to.eql({})
-                    done()
+                    done();
                 })
         })
 
@@ -44,7 +44,7 @@ describe('put', () => {
                     expect(res).to.have.status(200)
                     expect(res.body.data.title).to.eql(task.title)
                     expect(res.body.data.done).to.be.true
-                    done()
+                    done();
                 })
         })
 

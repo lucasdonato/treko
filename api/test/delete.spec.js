@@ -20,7 +20,7 @@ describe('delete', () => {
 
         before((done) => {
             tasksModel.insertMany([task])
-            done()
+            done();
         })
 
         it('deve retornar 200', (done) => {
@@ -29,7 +29,7 @@ describe('delete', () => {
                 .end((err, res) => {
                     expect(res).to.have.status(200)
                     expect(res.body).to.eql({})
-                    done()
+                    done();
                 })
         })
 
@@ -38,7 +38,7 @@ describe('delete', () => {
                 .get('/task/' + task._id)
                 .end((err, res) => {
                     expect(res).to.have.status(404)
-                    done()
+                    done();
                 })
         })
     })
@@ -51,7 +51,7 @@ describe('delete', () => {
                 .end((err, res) => {
                     expect(res).to.have.status(404)
                     expect(res.body).to.eql({})
-                    done()
+                    done();
                 })
         })
     })
