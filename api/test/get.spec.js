@@ -7,12 +7,21 @@ chai.use(chaiHttp);
 const app = require('../app');
 const request = chai.request.agent(app);
 const expect = chai.expect;
+const rabbit = chai.request("http://rabbitmq:15672")
 
 describe('get', () => {
 
     context('quando eu tenho tarefas cadastradas', () => {
 
         before((done) => {
+
+            rabbit
+            .delete("/api/queues/%2F/tasksdev/contents")
+            .auth('guest', 'guest')
+            .end((err, res) => {
+                expect(res).to.has.status(204)
+            })
+
             let tasks = [
                 { title: 'Estudar NodejS', owner: 'eu@papito.io', done: false },
                 { title: 'Fazer compras', owner: 'eu@papito.io', done: false },
