@@ -20,7 +20,7 @@ describe('put', () => {
         }
 
         before((done) => {
-            tasksModel.insertMany([task])
+            tasksModel.insertMany(task)
             done();
         })
 
