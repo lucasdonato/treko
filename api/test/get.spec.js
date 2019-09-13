@@ -15,13 +15,6 @@ describe('get', () => {
 
         before((done) => {
 
-            rabbit
-            .delete("/api/queues/%2F/tasksdev/contents")
-            .auth('guest', 'guest')
-            .end((err, res) => {
-                expect(res).to.has.status(204)
-            })
-
             let tasks = [
                 { title: 'Estudar NodejS', owner: 'eu@papito.io', done: false },
                 { title: 'Fazer compras', owner: 'eu@papito.io', done: false },

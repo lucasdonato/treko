@@ -5,9 +5,9 @@
     "passes": 13,
     "pending": 0,
     "failures": 0,
-    "start": "2019-09-13T01:04:33.459Z",
-    "end": "2019-09-13T01:04:33.813Z",
-    "duration": 354,
+    "start": "2019-09-13T01:12:52.792Z",
+    "end": "2019-09-13T01:12:53.114Z",
+    "duration": 322,
     "testsRegistered": 13,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "6ff83241-2838-47e4-91df-5952616b25a5",
+      "uuid": "e4b418ab-b456-43a5-b59e-16cf257db240",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "1944af93-7d31-473b-9727-29e7eaabff89",
+          "uuid": "963a3a92-b4ae-40f2-aaa5-647c06e82f4a",
           "title": "delete",
           "fullFile": "c:\\fullstack\\treko\\api\\test\\delete.spec.js",
           "file": "\\test\\delete.spec.js",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "db729a3e-a624-4cb0-9a16-ea2665a7c342",
+              "uuid": "4a109d5c-c89a-459f-a1b1-2536566122ad",
               "title": "quando apago uma tarefa",
               "fullFile": "c:\\fullstack\\treko\\api\\test\\delete.spec.js",
               "file": "\\test\\delete.spec.js",
@@ -45,7 +45,7 @@
                   "title": "\"before all\" hook",
                   "fullTitle": "delete quando apago uma tarefa \"before all\" hook",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": null,
                   "speed": null,
                   "pass": false,
@@ -54,8 +54,8 @@
                   "context": null,
                   "code": "_task2.default.insertMany([task]);\ndone();",
                   "err": {},
-                  "uuid": "c6c331ea-2bdc-442a-b7dc-3a91d8e9643c",
-                  "parentUUID": "db729a3e-a624-4cb0-9a16-ea2665a7c342",
+                  "uuid": "cf4a04c2-d53d-4e2b-9d7c-56f637c012b2",
+                  "parentUUID": "4a109d5c-c89a-459f-a1b1-2536566122ad",
                   "isHook": true,
                   "skipped": false
                 }
@@ -65,7 +65,7 @@
                   "title": "\"after all\" hook",
                   "fullTitle": "delete quando apago uma tarefa \"after all\" hook",
                   "timedOut": false,
-                  "duration": 13,
+                  "duration": 11,
                   "state": null,
                   "speed": null,
                   "pass": false,
@@ -74,8 +74,8 @@
                   "context": null,
                   "code": "request.get('/task/' + task._id).end(function (err, res) {\n    expect(res).to.have.status(404);\n    done();\n});",
                   "err": {},
-                  "uuid": "af857cc5-1bb7-47ba-80be-7187633fa4a1",
-                  "parentUUID": "db729a3e-a624-4cb0-9a16-ea2665a7c342",
+                  "uuid": "d3d061d7-4444-4fa6-ab41-caa363ba323b",
+                  "parentUUID": "4a109d5c-c89a-459f-a1b1-2536566122ad",
                   "isHook": true,
                   "skipped": false
                 }
@@ -85,35 +85,35 @@
                   "title": "deve retornar 200",
                   "fullTitle": "delete quando apago uma tarefa deve retornar 200",
                   "timedOut": false,
-                  "duration": 90,
+                  "duration": 60,
                   "state": "passed",
-                  "speed": "slow",
+                  "speed": "medium",
                   "pass": true,
                   "fail": false,
                   "pending": false,
                   "context": null,
                   "code": "request.delete('/task/' + task._id).end(function (err, res) {\n    expect(res).to.have.status(200);\n    expect(res.body).to.eql({});\n    done();\n});",
                   "err": {},
-                  "uuid": "1eb2b81f-3679-4b20-a774-d2dc8a8b349c",
-                  "parentUUID": "db729a3e-a624-4cb0-9a16-ea2665a7c342",
+                  "uuid": "2a46c078-68de-4bf5-b1ca-311cd28bc9ed",
+                  "parentUUID": "4a109d5c-c89a-459f-a1b1-2536566122ad",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "1eb2b81f-3679-4b20-a774-d2dc8a8b349c"
+                "2a46c078-68de-4bf5-b1ca-311cd28bc9ed"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 90,
+              "duration": 60,
               "root": false,
               "rootEmpty": false,
               "_timeout": 9000
             },
             {
-              "uuid": "a2ff7221-056d-4ab4-95af-43ec035d72d9",
+              "uuid": "93251ad3-9ee0-4ae9-8c9a-a456ea441317",
               "title": "quando a tarefa nao existe",
               "fullFile": "c:\\fullstack\\treko\\api\\test\\delete.spec.js",
               "file": "\\test\\delete.spec.js",
@@ -124,7 +124,7 @@
                   "title": "deve retornar 200",
                   "fullTitle": "delete quando a tarefa nao existe deve retornar 200",
                   "timedOut": false,
-                  "duration": 5,
+                  "duration": 6,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -133,15 +133,421 @@
                   "context": null,
                   "code": "var id = require('mongoose').Types.ObjectId();\nrequest.delete('/task/' + id).end(function (err, res) {\n    expect(res).to.have.status(404);\n    expect(res.body).to.eql({});\n    done();\n});",
                   "err": {},
-                  "uuid": "8ee84e1f-a8e1-4fd7-bfd3-d7c35860baa9",
-                  "parentUUID": "a2ff7221-056d-4ab4-95af-43ec035d72d9",
+                  "uuid": "8fd7ff29-bdf6-45a8-b745-d3082558f663",
+                  "parentUUID": "93251ad3-9ee0-4ae9-8c9a-a456ea441317",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "8ee84e1f-a8e1-4fd7-bfd3-d7c35860baa9"
+                "8fd7ff29-bdf6-45a8-b745-d3082558f663"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 6,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 9000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 9000
+        },
+        {
+          "uuid": "07e28dc9-9daf-481d-b84c-69961d56940f",
+          "title": "get",
+          "fullFile": "c:\\fullstack\\treko\\api\\test\\get.spec.js",
+          "file": "\\test\\get.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "c921d2b4-58ea-4a8e-964a-d428c89b5df2",
+              "title": "quando eu tenho tarefas cadastradas",
+              "fullFile": "c:\\fullstack\\treko\\api\\test\\get.spec.js",
+              "file": "\\test\\get.spec.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook",
+                  "fullTitle": "get quando eu tenho tarefas cadastradas \"before all\" hook",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var tasks = [{ title: 'Estudar NodejS', owner: 'eu@papito.io', done: false }, { title: 'Fazer compras', owner: 'eu@papito.io', done: false }, { title: 'Estudar MongoDB', owner: 'eu@papito.io', done: true }];\n            _task2.default.insertMany(tasks);\n            done();",
+                  "err": {},
+                  "uuid": "18755752-5638-4c01-8384-ec651fde5e04",
+                  "parentUUID": "c921d2b4-58ea-4a8e-964a-d428c89b5df2",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "deve retornar uma lista",
+                  "fullTitle": "get quando eu tenho tarefas cadastradas deve retornar uma lista",
+                  "timedOut": false,
+                  "duration": 9,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.get('/task').end(function (err, res) {\n    expect(res).to.has.status(200);\n    expect(res.body.data).to.be.an('array');\n    done();\n});",
+                  "err": {},
+                  "uuid": "40baa4dc-795e-4073-81c2-54cb0d2e0108",
+                  "parentUUID": "c921d2b4-58ea-4a8e-964a-d428c89b5df2",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "deve filtrar por palavra chave",
+                  "fullTitle": "get quando eu tenho tarefas cadastradas deve filtrar por palavra chave",
+                  "timedOut": false,
+                  "duration": 11,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.get('/task').query({ title: 'Estudar' }).end(function (err, res) {\n    expect(res).to.has.status(200);\n    expect(res.body.data[0].title).to.equal('Estudar NodejS');\n    expect(res.body.data[1].title).to.equal('Estudar MongoDB');\n    done();\n});",
+                  "err": {},
+                  "uuid": "ebe333dc-208a-4213-a7af-2dacf1002782",
+                  "parentUUID": "c921d2b4-58ea-4a8e-964a-d428c89b5df2",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "40baa4dc-795e-4073-81c2-54cb0d2e0108",
+                "ebe333dc-208a-4213-a7af-2dacf1002782"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 20,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 9000
+            },
+            {
+              "uuid": "767808a4-5c87-43c2-b5b4-263140f0ed60",
+              "title": "quando busco por id",
+              "fullFile": "c:\\fullstack\\treko\\api\\test\\get.spec.js",
+              "file": "\\test\\get.spec.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "deve retornar uma única tarefa",
+                  "fullTitle": "get quando busco por id deve retornar uma única tarefa",
+                  "timedOut": false,
+                  "duration": 9,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var tasks = [{ title: 'Ler um livro de Javascript', owner: 'eu@papito.io', done: false }];\n_task2.default.insertMany(tasks, function (err, result) {\n    var id = result[0]._id;\n    request.get('/task/' + id).end(function (err, res) {\n        expect(res).to.has.status(200);\n        expect(res.body.data.title).to.equal(tasks[0].title);\n        done();\n    });\n});",
+                  "err": {},
+                  "uuid": "a0053a41-cbdf-4931-8fc5-19845243fe0c",
+                  "parentUUID": "767808a4-5c87-43c2-b5b4-263140f0ed60",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a0053a41-cbdf-4931-8fc5-19845243fe0c"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 9,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 9000
+            },
+            {
+              "uuid": "02296dd6-4aca-4f23-9935-5ab8a614a125",
+              "title": "quando a tarefa nao existe",
+              "fullFile": "c:\\fullstack\\treko\\api\\test\\get.spec.js",
+              "file": "\\test\\get.spec.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "deve retornar 404",
+                  "fullTitle": "get quando a tarefa nao existe deve retornar 404",
+                  "timedOut": false,
+                  "duration": 8,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var id = require('mongoose').Types.ObjectId();\nrequest.get('/task/' + id).end(function (err, res) {\n    expect(res).to.has.status(404);\n    expect(res.body).to.eql({});\n    done();\n});",
+                  "err": {},
+                  "uuid": "d5e99c5a-fdfb-4bd7-ae41-9911328420b7",
+                  "parentUUID": "02296dd6-4aca-4f23-9935-5ab8a614a125",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "d5e99c5a-fdfb-4bd7-ae41-9911328420b7"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 8,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 9000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 9000
+        },
+        {
+          "uuid": "e6c61cbf-4d0e-4c73-bd62-1b40df287a82",
+          "title": "post",
+          "fullFile": "c:\\fullstack\\treko\\api\\test\\post.spec.js",
+          "file": "\\test\\post.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "f94a2597-48e1-4fae-9b88-51bda443b835",
+              "title": "quando eu cadastro uma tarefa",
+              "fullFile": "c:\\fullstack\\treko\\api\\test\\post.spec.js",
+              "file": "\\test\\post.spec.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook",
+                  "fullTitle": "post quando eu cadastro uma tarefa \"before all\" hook",
+                  "timedOut": false,
+                  "duration": 9,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "rabbit.delete(\"/api/queues/%2F/tasksdev/contents\").auth('guest', 'guest').end(function (err, res) {\n    expect(res).to.has.status(204);\n    done();\n});",
+                  "err": {},
+                  "uuid": "10377808-d0cd-42d1-a5ab-1be0eab75e58",
+                  "parentUUID": "f94a2597-48e1-4fae-9b88-51bda443b835",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "entao deve retornar 200",
+                  "fullTitle": "post quando eu cadastro uma tarefa entao deve retornar 200",
+                  "timedOut": false,
+                  "duration": 38,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(200);\n    expect(res.body.data.title).to.be.an('string');\n    expect(res.body.data.owner).to.be.an('string');\n    expect(res.body.data.done).to.be.an('boolean');\n    done();\n});",
+                  "err": {},
+                  "uuid": "ac2c3a9d-8728-437c-b5bf-caa6ab394c5f",
+                  "parentUUID": "f94a2597-48e1-4fae-9b88-51bda443b835",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "e deve enviar email",
+                  "fullTitle": "post quando eu cadastro uma tarefa e deve enviar email",
+                  "timedOut": false,
+                  "duration": 9,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "var payload = { vhost: \"/\", name: \"tasksdev\", truncate: \"50000\", ackmode: \"ack_requeue_true\", encoding: \"auto\", count: \"1000\" };\nrabbit.post(\"/api/queues/%2f/tasksdev/get\").auth('guest', 'guest').send(payload).end(function (err, res) {\n    expect(res).to.have.status(200);\n    expect(res.body[0].payload).to.contain('Tarefa ' + task.title + ' criada com sucesso!');\n    done();\n});",
+                  "err": {},
+                  "uuid": "7d9a6f01-f5fa-4372-a51f-23b7896f4569",
+                  "parentUUID": "f94a2597-48e1-4fae-9b88-51bda443b835",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "ac2c3a9d-8728-437c-b5bf-caa6ab394c5f",
+                "7d9a6f01-f5fa-4372-a51f-23b7896f4569"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 47,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 9000
+            },
+            {
+              "uuid": "20e29cac-b017-4475-8bae-02e17b617569",
+              "title": "quando nao informo o titulo",
+              "fullFile": "c:\\fullstack\\treko\\api\\test\\post.spec.js",
+              "file": "\\test\\post.spec.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "entao deve retornar 400",
+                  "fullTitle": "post quando nao informo o titulo entao deve retornar 400",
+                  "timedOut": false,
+                  "duration": 7,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(400);\n    expect(res.body.errors.title.message).to.eql('Oops! Title is required.');\n    done();\n});",
+                  "err": {},
+                  "uuid": "ec40950c-281f-40f1-8765-c5f9c911a588",
+                  "parentUUID": "20e29cac-b017-4475-8bae-02e17b617569",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "ec40950c-281f-40f1-8765-c5f9c911a588"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 7,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 9000
+            },
+            {
+              "uuid": "7fec2504-9088-4ed4-980a-4460ebea246a",
+              "title": "quando nao informo o dono",
+              "fullFile": "c:\\fullstack\\treko\\api\\test\\post.spec.js",
+              "file": "\\test\\post.spec.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "entao deve retornar 400",
+                  "fullTitle": "post quando nao informo o dono entao deve retornar 400",
+                  "timedOut": false,
+                  "duration": 4,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(400);\n    expect(res.body.errors.owner.message).to.eql('Oops! Owner is required.');\n    done();\n});",
+                  "err": {},
+                  "uuid": "7c909368-d289-4d49-8d8e-7f8b10a669af",
+                  "parentUUID": "7fec2504-9088-4ed4-980a-4460ebea246a",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "7c909368-d289-4d49-8d8e-7f8b10a669af"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 4,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 9000
+            },
+            {
+              "uuid": "839c8f7d-a183-4412-97d7-f6b00a562dae",
+              "title": "quando a tarefa jรก existe",
+              "fullFile": "c:\\fullstack\\treko\\api\\test\\post.spec.js",
+              "file": "\\test\\post.spec.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook",
+                  "fullTitle": "post quando a tarefa jรก existe \"before all\" hook",
+                  "timedOut": false,
+                  "duration": 7,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(200);\n    done();\n});",
+                  "err": {},
+                  "uuid": "b550fe89-1fac-4d46-9388-0a960e0c16a0",
+                  "parentUUID": "839c8f7d-a183-4412-97d7-f6b00a562dae",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "deve retornar 409",
+                  "fullTitle": "post quando a tarefa jรก existe deve retornar 409",
+                  "timedOut": false,
+                  "duration": 5,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(409);\n    expect(res.body.errmsg).to.include('duplicate key');\n    done();\n});",
+                  "err": {},
+                  "uuid": "7ae4a858-e57a-415e-9a45-105143696fd8",
+                  "parentUUID": "839c8f7d-a183-4412-97d7-f6b00a562dae",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "7ae4a858-e57a-415e-9a45-105143696fd8"
               ],
               "failures": [],
               "pending": [],
@@ -162,413 +568,7 @@
           "_timeout": 9000
         },
         {
-          "uuid": "255e1a82-1ab8-4105-9be8-803c8424455b",
-          "title": "get",
-          "fullFile": "c:\\fullstack\\treko\\api\\test\\get.spec.js",
-          "file": "\\test\\get.spec.js",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [],
-          "suites": [
-            {
-              "uuid": "c8c1e631-0068-481c-a89b-104ac050b9e6",
-              "title": "quando eu tenho tarefas cadastradas",
-              "fullFile": "c:\\fullstack\\treko\\api\\test\\get.spec.js",
-              "file": "\\test\\get.spec.js",
-              "beforeHooks": [
-                {
-                  "title": "\"before all\" hook",
-                  "fullTitle": "get quando eu tenho tarefas cadastradas \"before all\" hook",
-                  "timedOut": false,
-                  "duration": 1,
-                  "state": null,
-                  "speed": null,
-                  "pass": false,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "rabbit.delete(\"/api/queues/%2F/tasksdev/contents\").auth('guest', 'guest').end(function (err, res) {\n                expect(res).to.has.status(204);\n            });\n            var tasks = [{ title: 'Estudar NodejS', owner: 'eu@papito.io', done: false }, { title: 'Fazer compras', owner: 'eu@papito.io', done: false }, { title: 'Estudar MongoDB', owner: 'eu@papito.io', done: true }];\n            _task2.default.insertMany(tasks);\n            done();",
-                  "err": {},
-                  "uuid": "409b2d4c-a7bd-4f57-a3f2-73e002f186f8",
-                  "parentUUID": "c8c1e631-0068-481c-a89b-104ac050b9e6",
-                  "isHook": true,
-                  "skipped": false
-                }
-              ],
-              "afterHooks": [],
-              "tests": [
-                {
-                  "title": "deve retornar uma lista",
-                  "fullTitle": "get quando eu tenho tarefas cadastradas deve retornar uma lista",
-                  "timedOut": false,
-                  "duration": 17,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "request.get('/task').end(function (err, res) {\n    expect(res).to.has.status(200);\n    expect(res.body.data).to.be.an('array');\n    done();\n});",
-                  "err": {},
-                  "uuid": "27232ba6-5677-4de5-8ec7-092cba41e35e",
-                  "parentUUID": "c8c1e631-0068-481c-a89b-104ac050b9e6",
-                  "isHook": false,
-                  "skipped": false
-                },
-                {
-                  "title": "deve filtrar por palavra chave",
-                  "fullTitle": "get quando eu tenho tarefas cadastradas deve filtrar por palavra chave",
-                  "timedOut": false,
-                  "duration": 16,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "request.get('/task').query({ title: 'Estudar' }).end(function (err, res) {\n    expect(res).to.has.status(200);\n    expect(res.body.data[0].title).to.equal('Estudar NodejS');\n    expect(res.body.data[1].title).to.equal('Estudar MongoDB');\n    done();\n});",
-                  "err": {},
-                  "uuid": "f0598355-05c2-464f-9172-fa783db293a4",
-                  "parentUUID": "c8c1e631-0068-481c-a89b-104ac050b9e6",
-                  "isHook": false,
-                  "skipped": false
-                }
-              ],
-              "suites": [],
-              "passes": [
-                "27232ba6-5677-4de5-8ec7-092cba41e35e",
-                "f0598355-05c2-464f-9172-fa783db293a4"
-              ],
-              "failures": [],
-              "pending": [],
-              "skipped": [],
-              "duration": 33,
-              "root": false,
-              "rootEmpty": false,
-              "_timeout": 9000
-            },
-            {
-              "uuid": "90eb7761-0371-4133-b486-63a293a9d5ca",
-              "title": "quando busco por id",
-              "fullFile": "c:\\fullstack\\treko\\api\\test\\get.spec.js",
-              "file": "\\test\\get.spec.js",
-              "beforeHooks": [],
-              "afterHooks": [],
-              "tests": [
-                {
-                  "title": "deve retornar uma única tarefa",
-                  "fullTitle": "get quando busco por id deve retornar uma única tarefa",
-                  "timedOut": false,
-                  "duration": 11,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "var tasks = [{ title: 'Ler um livro de Javascript', owner: 'eu@papito.io', done: false }];\n_task2.default.insertMany(tasks, function (err, result) {\n    var id = result[0]._id;\n    request.get('/task/' + id).end(function (err, res) {\n        expect(res).to.has.status(200);\n        expect(res.body.data.title).to.equal(tasks[0].title);\n        done();\n    });\n});",
-                  "err": {},
-                  "uuid": "a60b9bae-7585-4c7a-9681-ee076942a345",
-                  "parentUUID": "90eb7761-0371-4133-b486-63a293a9d5ca",
-                  "isHook": false,
-                  "skipped": false
-                }
-              ],
-              "suites": [],
-              "passes": [
-                "a60b9bae-7585-4c7a-9681-ee076942a345"
-              ],
-              "failures": [],
-              "pending": [],
-              "skipped": [],
-              "duration": 11,
-              "root": false,
-              "rootEmpty": false,
-              "_timeout": 9000
-            },
-            {
-              "uuid": "0a8fe9dc-ae09-4a5f-8453-3f5d468b14ec",
-              "title": "quando a tarefa nao existe",
-              "fullFile": "c:\\fullstack\\treko\\api\\test\\get.spec.js",
-              "file": "\\test\\get.spec.js",
-              "beforeHooks": [],
-              "afterHooks": [],
-              "tests": [
-                {
-                  "title": "deve retornar 404",
-                  "fullTitle": "get quando a tarefa nao existe deve retornar 404",
-                  "timedOut": false,
-                  "duration": 3,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "var id = require('mongoose').Types.ObjectId();\nrequest.get('/task/' + id).end(function (err, res) {\n    expect(res).to.has.status(404);\n    expect(res.body).to.eql({});\n    done();\n});",
-                  "err": {},
-                  "uuid": "6e159bb2-ea90-476a-912a-d39aaf4471ab",
-                  "parentUUID": "0a8fe9dc-ae09-4a5f-8453-3f5d468b14ec",
-                  "isHook": false,
-                  "skipped": false
-                }
-              ],
-              "suites": [],
-              "passes": [
-                "6e159bb2-ea90-476a-912a-d39aaf4471ab"
-              ],
-              "failures": [],
-              "pending": [],
-              "skipped": [],
-              "duration": 3,
-              "root": false,
-              "rootEmpty": false,
-              "_timeout": 9000
-            }
-          ],
-          "passes": [],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 0,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 9000
-        },
-        {
-          "uuid": "4e5d747d-381e-42c9-b424-4876e741c6e9",
-          "title": "post",
-          "fullFile": "c:\\fullstack\\treko\\api\\test\\post.spec.js",
-          "file": "\\test\\post.spec.js",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [],
-          "suites": [
-            {
-              "uuid": "b69401f6-d608-40d8-8038-4a8e3d69e471",
-              "title": "quando eu cadastro uma tarefa",
-              "fullFile": "c:\\fullstack\\treko\\api\\test\\post.spec.js",
-              "file": "\\test\\post.spec.js",
-              "beforeHooks": [
-                {
-                  "title": "\"before all\" hook",
-                  "fullTitle": "post quando eu cadastro uma tarefa \"before all\" hook",
-                  "timedOut": false,
-                  "duration": 17,
-                  "state": null,
-                  "speed": null,
-                  "pass": false,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "rabbit.delete(\"/api/queues/%2F/tasksdev/contents\").auth('guest', 'guest').end(function (err, res) {\n    expect(res).to.has.status(204);\n    done();\n});",
-                  "err": {},
-                  "uuid": "defcbaa9-c958-4a32-9bdb-33caf20aa394",
-                  "parentUUID": "b69401f6-d608-40d8-8038-4a8e3d69e471",
-                  "isHook": true,
-                  "skipped": false
-                }
-              ],
-              "afterHooks": [],
-              "tests": [
-                {
-                  "title": "entao deve retornar 200",
-                  "fullTitle": "post quando eu cadastro uma tarefa entao deve retornar 200",
-                  "timedOut": false,
-                  "duration": 35,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(200);\n    expect(res.body.data.title).to.be.an('string');\n    expect(res.body.data.owner).to.be.an('string');\n    expect(res.body.data.done).to.be.an('boolean');\n    done();\n});",
-                  "err": {},
-                  "uuid": "96242979-e996-4b02-a281-36eb865c0693",
-                  "parentUUID": "b69401f6-d608-40d8-8038-4a8e3d69e471",
-                  "isHook": false,
-                  "skipped": false
-                },
-                {
-                  "title": "e deve enviar email",
-                  "fullTitle": "post quando eu cadastro uma tarefa e deve enviar email",
-                  "timedOut": false,
-                  "duration": 11,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "var payload = { vhost: \"/\", name: \"tasksdev\", truncate: \"50000\", ackmode: \"ack_requeue_true\", encoding: \"auto\", count: \"1000\" };\nrabbit.post(\"/api/queues/%2f/tasksdev/get\").auth('guest', 'guest').send(payload).end(function (err, res) {\n    expect(res).to.have.status(200);\n    expect(res.body[0].payload).to.contain('Tarefa ' + task.title + ' criada com sucesso!');\n    done();\n});",
-                  "err": {},
-                  "uuid": "00a85b1c-4f22-4b5f-97d8-885aab205c9a",
-                  "parentUUID": "b69401f6-d608-40d8-8038-4a8e3d69e471",
-                  "isHook": false,
-                  "skipped": false
-                }
-              ],
-              "suites": [],
-              "passes": [
-                "96242979-e996-4b02-a281-36eb865c0693",
-                "00a85b1c-4f22-4b5f-97d8-885aab205c9a"
-              ],
-              "failures": [],
-              "pending": [],
-              "skipped": [],
-              "duration": 46,
-              "root": false,
-              "rootEmpty": false,
-              "_timeout": 9000
-            },
-            {
-              "uuid": "95d2c3aa-a51c-4c32-acb3-96d5010cd56e",
-              "title": "quando nao informo o titulo",
-              "fullFile": "c:\\fullstack\\treko\\api\\test\\post.spec.js",
-              "file": "\\test\\post.spec.js",
-              "beforeHooks": [],
-              "afterHooks": [],
-              "tests": [
-                {
-                  "title": "entao deve retornar 400",
-                  "fullTitle": "post quando nao informo o titulo entao deve retornar 400",
-                  "timedOut": false,
-                  "duration": 6,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(400);\n    expect(res.body.errors.title.message).to.eql('Oops! Title is required.');\n    done();\n});",
-                  "err": {},
-                  "uuid": "bb0a6104-cc63-4feb-9734-e042e68bc1fd",
-                  "parentUUID": "95d2c3aa-a51c-4c32-acb3-96d5010cd56e",
-                  "isHook": false,
-                  "skipped": false
-                }
-              ],
-              "suites": [],
-              "passes": [
-                "bb0a6104-cc63-4feb-9734-e042e68bc1fd"
-              ],
-              "failures": [],
-              "pending": [],
-              "skipped": [],
-              "duration": 6,
-              "root": false,
-              "rootEmpty": false,
-              "_timeout": 9000
-            },
-            {
-              "uuid": "71bbdcb2-a89c-45e1-9cc6-8f6d2a00cd04",
-              "title": "quando nao informo o dono",
-              "fullFile": "c:\\fullstack\\treko\\api\\test\\post.spec.js",
-              "file": "\\test\\post.spec.js",
-              "beforeHooks": [],
-              "afterHooks": [],
-              "tests": [
-                {
-                  "title": "entao deve retornar 400",
-                  "fullTitle": "post quando nao informo o dono entao deve retornar 400",
-                  "timedOut": false,
-                  "duration": 3,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(400);\n    expect(res.body.errors.owner.message).to.eql('Oops! Owner is required.');\n    done();\n});",
-                  "err": {},
-                  "uuid": "ad0b93b9-288e-4821-9066-dc46c92508f9",
-                  "parentUUID": "71bbdcb2-a89c-45e1-9cc6-8f6d2a00cd04",
-                  "isHook": false,
-                  "skipped": false
-                }
-              ],
-              "suites": [],
-              "passes": [
-                "ad0b93b9-288e-4821-9066-dc46c92508f9"
-              ],
-              "failures": [],
-              "pending": [],
-              "skipped": [],
-              "duration": 3,
-              "root": false,
-              "rootEmpty": false,
-              "_timeout": 9000
-            },
-            {
-              "uuid": "fad8f2dc-8d0f-4a0f-943f-a6963cdc1c74",
-              "title": "quando a tarefa jรก existe",
-              "fullFile": "c:\\fullstack\\treko\\api\\test\\post.spec.js",
-              "file": "\\test\\post.spec.js",
-              "beforeHooks": [
-                {
-                  "title": "\"before all\" hook",
-                  "fullTitle": "post quando a tarefa jรก existe \"before all\" hook",
-                  "timedOut": false,
-                  "duration": 12,
-                  "state": null,
-                  "speed": null,
-                  "pass": false,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(200);\n    done();\n});",
-                  "err": {},
-                  "uuid": "9077d1a9-5167-4927-89e5-3da0a9fa24d6",
-                  "parentUUID": "fad8f2dc-8d0f-4a0f-943f-a6963cdc1c74",
-                  "isHook": true,
-                  "skipped": false
-                }
-              ],
-              "afterHooks": [],
-              "tests": [
-                {
-                  "title": "deve retornar 409",
-                  "fullTitle": "post quando a tarefa jรก existe deve retornar 409",
-                  "timedOut": false,
-                  "duration": 7,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
-                  "pending": false,
-                  "context": null,
-                  "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(409);\n    expect(res.body.errmsg).to.include('duplicate key');\n    done();\n});",
-                  "err": {},
-                  "uuid": "c07d88b0-96d2-448c-bf31-ab99d2f0dcf8",
-                  "parentUUID": "fad8f2dc-8d0f-4a0f-943f-a6963cdc1c74",
-                  "isHook": false,
-                  "skipped": false
-                }
-              ],
-              "suites": [],
-              "passes": [
-                "c07d88b0-96d2-448c-bf31-ab99d2f0dcf8"
-              ],
-              "failures": [],
-              "pending": [],
-              "skipped": [],
-              "duration": 7,
-              "root": false,
-              "rootEmpty": false,
-              "_timeout": 9000
-            }
-          ],
-          "passes": [],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 0,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 9000
-        },
-        {
-          "uuid": "d053c906-79ac-4429-a20f-ce2224c16a79",
+          "uuid": "d2163971-4053-4ed7-b533-d2c609a2816d",
           "title": "put",
           "fullFile": "c:\\fullstack\\treko\\api\\test\\put.spec.js",
           "file": "\\test\\put.spec.js",
@@ -577,7 +577,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "d6157c82-5f7f-45fc-a2ef-79be1090b113",
+              "uuid": "4d93be33-37f0-4fd1-b657-50725851b11b",
               "title": "quando eu altero uma tarefa",
               "fullFile": "c:\\fullstack\\treko\\api\\test\\put.spec.js",
               "file": "\\test\\put.spec.js",
@@ -595,8 +595,8 @@
                   "context": null,
                   "code": "_task2.default.insertMany(task);\ndone();",
                   "err": {},
-                  "uuid": "85be89e9-a1e7-472d-9f91-155249a51c38",
-                  "parentUUID": "d6157c82-5f7f-45fc-a2ef-79be1090b113",
+                  "uuid": "732c7f86-bc0e-4708-89af-20bedb5d8a7c",
+                  "parentUUID": "4d93be33-37f0-4fd1-b657-50725851b11b",
                   "isHook": true,
                   "skipped": false
                 }
@@ -607,7 +607,7 @@
                   "title": "entao deve retornar 200",
                   "fullTitle": "put quando eu altero uma tarefa entao deve retornar 200",
                   "timedOut": false,
-                  "duration": 13,
+                  "duration": 14,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -616,8 +616,8 @@
                   "context": null,
                   "code": "task.title = 'Comprar Baconzitos', task.done = true;\nrequest.put('/task/' + task._id).send(task).end(function (err, res) {\n    expect(res).to.have.status(200);\n    expect(res.body).to.eql({});\n    done();\n});",
                   "err": {},
-                  "uuid": "49b394f4-af06-4f44-a419-e268f6fbf31a",
-                  "parentUUID": "d6157c82-5f7f-45fc-a2ef-79be1090b113",
+                  "uuid": "c613bc7f-e750-42ff-8547-8b95dc7ab348",
+                  "parentUUID": "4d93be33-37f0-4fd1-b657-50725851b11b",
                   "isHook": false,
                   "skipped": false
                 },
@@ -625,7 +625,7 @@
                   "title": "e deve retornar os dados atualizados",
                   "fullTitle": "put quando eu altero uma tarefa e deve retornar os dados atualizados",
                   "timedOut": false,
-                  "duration": 5,
+                  "duration": 7,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -634,21 +634,21 @@
                   "context": null,
                   "code": "request.get('/task/' + task._id).end(function (err, res) {\n    expect(res).to.have.status(200);\n    expect(res.body.data.title).to.eql(task.title);\n    expect(res.body.data.done).to.be.true;\n    done();\n});",
                   "err": {},
-                  "uuid": "d789b99f-7091-4b23-be9f-bf32a7f8f6c9",
-                  "parentUUID": "d6157c82-5f7f-45fc-a2ef-79be1090b113",
+                  "uuid": "dcef7fd1-95c9-40af-b166-14c87d0049ce",
+                  "parentUUID": "4d93be33-37f0-4fd1-b657-50725851b11b",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "49b394f4-af06-4f44-a419-e268f6fbf31a",
-                "d789b99f-7091-4b23-be9f-bf32a7f8f6c9"
+                "c613bc7f-e750-42ff-8547-8b95dc7ab348",
+                "dcef7fd1-95c9-40af-b166-14c87d0049ce"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 18,
+              "duration": 21,
               "root": false,
               "rootEmpty": false,
               "_timeout": 9000
