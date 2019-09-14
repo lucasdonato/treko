@@ -10,7 +10,9 @@ const expect = chai.expect;
 
 
 describe('delete', () => {
+
     context('quando apago uma tarefa', () => {
+
         let task = {
             _id: require('mongoose').Types.ObjectId(),
             title: 'Pagar conta de celular',
@@ -19,27 +21,26 @@ describe('delete', () => {
         }
 
         before((done) => {
-            tasksModel.insertMany([task])
-            done();
+            tasksModel.insertMany([task], (error, docs) => {
+                request
+                    .delete('/task/' + task._id)
+                    .end((err, res) => {
+                        //solução paliativa para resolver problemas de lentidão;
+                        expect(res).to.have.status(200)
+                        expect(res.body).to.eql({})
+                        done()
+                    })
+            })
+
         })
 
-        it('deve retornar 200', (done) => {
+        it('então o retorno deve ser 404', (done) => {
             request
-                .delete('/task/' + task._id)
-                .end((err, res) => {
-                    expect(res).to.have.status(200)
-                    expect(res.body).to.eql({})
-                    done();
-                })
-        })
-
-        after((done) => {
-            request
-                .get('/task/' + task._id)
-                .end((err, res) => {
-                    expect(res).to.have.status(404)
-                    done();
-                })
+            .get('/task/' + task._id)
+            .end((err, res) => {
+                expect(res).to.have.status(404)
+                done()
+            })
         })
     })
 
@@ -51,7 +52,7 @@ describe('delete', () => {
                 .end((err, res) => {
                     expect(res).to.have.status(404)
                     expect(res.body).to.eql({})
-                    done();
+                    done()
                 })
         })
     })
