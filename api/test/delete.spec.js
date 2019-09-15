@@ -45,7 +45,7 @@ describe('delete', () => {
     })
 
     context('quando a tarefa nao existe', () => {
-        it('deve retornar 200', (done) => {
+        it('deve retornar 404', (done) => {
             let id = require('mongoose').Types.ObjectId();
             request
                 .delete('/task/' + id)
